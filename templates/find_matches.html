@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <nav class="nav-bar">
+        <a href="/"><img class="header" id = "logo" src = "/static/images/realreallogo.png" ></a>
+        <ul class="nav-bar-options" >
+          <li class="option"><a href="/">OUR IDEA</a></li>
+          <li class="option_main"><a href="/findmatch">MATCH RESULT</a></li>
+          <li class="option"><a href="/mate">FIND A MATE</a>            
+          <li class="option"><a href="/aboutus">ABOUT US</a></li></li>
+        </ul>
+    </nav>
+    <title>Meet a Mate</title>
+    <link href="/static/css/findamentor.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="website icon" href="reallogo.png"/> 
+    <script src="script.js"></script>
+    <style>
+        #customers {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        #customers td, #customers th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        
+        #customers tr:hover {background-color: #ddd;}
+        
+        #customers th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #04AA6D;
+          color: white;
+        }
+        </style>
+  </head>
+   
+  <body>
+    <div class="titlediv">
+        <h1 class="title">Matchmaker Results</h1>
+      </div>
+      <table id="customers">
+        <tr>
+          <th>Name</th>
+          <th>Grade</th>
+          <th>Phone Number</th>
+          <th>Instagram</th>
+          <th>Email</th>
+        </tr>
+        
+        <h3 class="center">Instagram: ____<br>
+        Phone Number: ____<br>
+        Email: ____<br></h3>
+        {% for mentor in results["mentor_matches"] %}
+        <tr>
+            <td>{{mentor["name"]}}</td>
+            <td>{{mentor["grade"]}}</td>
+            <td>{{mentor["phone"]}}</td>
+            <td>{{mentor["insta"]}}</td>
+            <td>{{mentor["email"]}}</td>
+          </tr>
+        {% endfor %}
+        </table>    
+  </body>
+</html>
+
+      
+      
+
